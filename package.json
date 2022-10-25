@@ -32,7 +32,7 @@
       ]
    },
    "scripts": {
-      "build": "browserify public/blinkmoji.js public/blinken.js -o public/bundle-blinkmoji.js ",
+      "build": "browserify public/blinkmoji.js public/blinken.js -t [ babelify --presets [ @babel/preset-env ] --global  --only [public node_modules\/@joeattardi] ] -o public/bundle-blinkmoji.js ",
       "watch": "watchify client.js -o public/bundle.js -v",
       "test": "echo \"Error: no test specified\" && exit 1"
    }
